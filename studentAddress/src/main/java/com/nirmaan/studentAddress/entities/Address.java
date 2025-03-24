@@ -14,49 +14,96 @@ public class Address {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	private String address;
-	private long pincode;
+	private String street;
+	private String city;
+	private String state;
+	private String zipcode;
+	
 	
 	@OneToOne(mappedBy = "address")
 	@JsonIgnore
 	Student std;
-	
-	
-	public Address(int id, String address, long pincode, Student std) {
+
+
+	public Address(int id, String street, String city, String state, String zipcode, Student std) {
 		super();
 		this.id = id;
-		this.address = address;
-		this.pincode = pincode;
+		this.street = street;
+		this.city = city;
+		this.state = state;
+		this.zipcode = zipcode;
 		this.std = std;
 	}
+
+
 	public Address() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+
+
 	public int getId() {
 		return id;
 	}
+
+
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getAddress() {
-		return address;
+
+
+	public String getStreet() {
+		return street;
 	}
-	public void setAddress(String address) {
-		this.address = address;
+
+
+	public void setStreet(String street) {
+		this.street = street;
 	}
-	public long getPincode() {
-		return pincode;
+
+
+	public String getCity() {
+		return city;
 	}
-	public void setPincode(long pincode) {
-		this.pincode = pincode;
+
+
+	public void setCity(String city) {
+		this.city = city;
 	}
+
+
+	public String getState() {
+		return state;
+	}
+
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+
+	public String getZipcode() {
+		return zipcode;
+	}
+
+
+	public void setZipcode(String zipcode) {
+		this.zipcode = zipcode;
+	}
+
+
 	public Student getStd() {
 		return std;
 	}
+
+
 	public void setStd(Student std) {
 		this.std = std;
 	}
+	
+	
+	
+	
 	
 
 }
